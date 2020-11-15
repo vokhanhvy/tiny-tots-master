@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyTots Cart</title>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    
+    <!-- Google Font - Poppin -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Home CSS of Linh -->
+    <link rel="stylesheet" href="./products/home.css">
+
+    <!-- Product CSS -->
+    <link rel="stylesheet" href="./products/products.css">
+
+    <!-- Product CSS -->
+    <link rel="stylesheet" href="./cart/cart.css">
+
+    <!-- AOS Animation CSS anh Linh -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css" />
+    
+    <!-- Boostrap -->
+     <!-- Bootstrap CSS anh Linh -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+   
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+     <!-- Toastr -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+</head>
+
+<body onload="loadingProducts()"> 
+
+
+
+  <!-- Navitation bar from homepage -->
+  <section id="navigation">
+    <nav class="navbar">
+        <div class="container">
+            <div class="d-flex flex-row align-items-center justify-content-center w-100">
+                <img class="logo" alt="logo" src="./products/images/tiny-tots-logo.jpg" />
+                <div class="d-flex flex-column align-items-center justify-content-center w-100">
+                    <div class="d-flex flex-row align-items-center justify-content-end w-100">
+                        <input class="form-control mr-sm-4 w-25" type="search" placeholder="Search" aria-label="Search" />
+                        <button type="button" class="btn login-button mr-sm-4">
+                            Join Us
+                        </button>
+                        <i class="fas fa-shopping-cart cart-icon"></i>
+                    </div>
+                    <div class="d-flex flex-row align-items-center justify-content-end w-100">
+                        <div class="navbar">
+                            <ul class="navbar-nav d-flex flex-row">
+                                <li class="nav-item ml-sm-5">
+                                    <a class="nav-link" href="./index.html">Home</a>
+                                </li>
+                                <li class="nav-item ml-sm-5">
+                                    <a class="nav-link" href="./products.html">Product</a>
+                                </li>
+                                <li class="nav-item ml-sm-5">
+                                    <a class="nav-link" href="#">News</a>
+                                </li>
+                                <li class="nav-item ml-sm-5">
+                                    <a class="nav-link" href="./franchise.html">Franchise</a>
+                                </li>
+                                <li class="nav-item ml-sm-5">
+                                    <a class="nav-link" href="./contactus.html">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</section> <!-- end navigation section -->
+
+
+
+
+
+<!--Section: Cart-->
+<section id="Cart">
+    <div class="container">
+        <!-- San pham order chiem 8 phan -->
+        <div class="col-xs-12 col-lg-8"> 
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h3 class="mb-4">Your Cart</h3>
+                    <div class="row mb-4">
+                        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-3"> <!-- Hinh anh, nho chinh lai so 6 -->
+                            <div class="thumbnail mb-3"> <!-- De hinh anh khong nam sat le -->
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg">
+                            </div> <!-- KEt thuc Hinh anh san pham -->
+                        </div> <!-- KEt thuc Hinh anh san pham -->
+                        <div class=" col-xs-12 col-sm-12 col-md-7 col-lg-9">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h5>Blue denim shirt</h5>
+                                    <p class="mb-3 text-muted small">Brand: Johnson</p>
+                                    <!-- <p class="mb-3 text-muted text-uppercase small">Size: M</p> -->
+                                </div>
+                                <div class="">
+                                    <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                        <span class="glyphicon glyphicon-minus"></span>
+                                    </button>
+                                    <input min="0" value="1" type="number">
+                                    <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                    </button>
+                                </div>
+                            </div> <!-- ket thuc so luong va describe san pham -->
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <a href="#!" type="button" class=" small mr-3"><i class="fas fa-trash-alt mr-1"></i> Remove item </a>
+                                    <!-- <a href="#!" type="button" class="card-link-secondary small text-uppercase"><i
+                                    class="fas fa-heart mr-1"></i> Move to wish list </a> -->
+                                </div>
+                                <p class="mb-0"><span><strong>$17.99</strong></span></p>
+                            </div> <!-- ket thuc remove va gia tien -->
+                        </div> <!-- ket thuc phan describe ben canh san pham -->
+                    </div> <!-- ket thuc phan card san pham -->
+                    <hr class="mb-4">
+                </div>
+            </div>
+        </div>
+            
+        <div class="col-xs-12 col-lg-4"> <!-- phan gia tien -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <ul class="list-group ">
+                        <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                             Temporary Amount<span>$25.98</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                            <div>
+                                <strong>Total Amount</strong>
+                                <strong><p class="mb-0">(including VAT)</p></strong>
+                            </div>
+                            <span><strong>$53.98</strong></span>
+                        </li>
+                    </ul>
+                    <button type="button" class="btn btn-primary btn-block ">PROCEED TO CHECKOUT</button>
+                </div>
+            </div>
+        </div>
+      <!--Ket thuc phan thanh toan-->
+    </div>
+</section>
