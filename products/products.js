@@ -11,7 +11,7 @@ function Product(id, category, image, name, price, brand) {
 listProducts.push(new Product("BA1", "Baby Care", "baby-care/bottlejs1.jpg", "Anti Colic Bottle 260ml","$15.00", "Johnson"));
 listProducts.push(new Product("BA2", "Baby Care", "baby-care/bottle-pigeon1.jpg", "Nursing Bottle", "$14.45", "Pigeon"));
 listProducts.push(new Product("BA3", "Baby Care", "baby-care/stroller1.jpg", "Baby Stroller",  "$578.50", "Kids"));
-listProducts.push(new Product("BA5", "Baby Care", "baby-care/bib1.jpg", "Waterproof Silicone Bib",  "$5.8", "Pigeon"));
+listProducts.push(new Product("BA4", "Baby Care", "baby-care/bib1.jpg", "Waterproof Silicone Bib",  "$5.8", "Pigeon"));
 listProducts.push(new Product("BA5", "Baby Care", "baby-care/pacifier1.jpg", "Ultra Air Pacifier", "$6.50", "Johnson"));
 
 listProducts.push(new Product("FA1", "Fashion", "fashion/girldress1.jpg", "Girl Party Dress","$30.00", "Baby Comfy"));
