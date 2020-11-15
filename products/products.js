@@ -53,7 +53,7 @@ function product(n) {
   for (let i in listProducts) {
     if (listProducts[i].Category == n) {
       document.getElementById("product-list").innerHTML +=
-        '<div class="col-xs-12 col-sm-6 col-md-4 flex" data-aos="flip-left">\n' +
+        '<div class="col-xs-12 col-sm-6 col-md-4 d-flex item" data-aos="flip-left">\n' +
         '   <div class="thumbnail">\n' +
         '       <img src="./products/images/' +
         listProducts[i].Image +
@@ -81,7 +81,7 @@ function product(n) {
 
     if (listProducts[i].Brand == category) {
       document.getElementById("product-list").innerHTML +=
-        '<div class="col-xs-12 col-sm-6 col-md-4 flex" data-aos="flip-left">\n' +
+        '<div class="col-xs-12 col-sm-6 col-md-4 d-flex item" data-aos="flip-left">\n' +
         '   <div class="thumbnail">\n' +
         '       <img src="./products/images/' +
         listProducts[i].Image +
@@ -112,7 +112,7 @@ function product(n) {
 function loadingProducts() {
   for (let i in listProducts) {
     document.getElementById("product-list").innerHTML +=
-      '<div class="col-xs-12 col-sm-6 col-md-4 flex" data-aos="flip-left">\n' +
+      '<div class="col-xs-12 col-sm-6 col-md-4 d-flex item" data-aos="flip-left">\n' +
       '   <div class="thumbnail">\n' +
       '       <img src="./products/images/' +
       listProducts[i].Image +
@@ -203,3 +203,35 @@ function compareProducts() {
 
   compareID = [];
 }
+
+
+// Add function to make all product cards have equal height 
+
+(function ($) {
+
+  // preload object array to gain performance
+  var $items = $('.item')
+  
+  // run at resize
+  $( window ).resize(function() {
+    $.fn.setHeight(0);   
+  });  
+
+  $.fn.setHeight = function(height) {
+
+    // reset to auto or else we can't check height
+    $($items).css({ 'height': 'auto' });
+    
+    // get highest value
+    $($items).each(function(i, obj) {    
+      height = Math.max(height, $(obj).outerHeight()) 
+    });
+
+    // set the height
+    $($items).css({ 'height': height + 'px' });    
+  }
+
+  // run at load
+  $.fn.setHeight(0);
+  
+}(jQuery));
