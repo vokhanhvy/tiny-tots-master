@@ -68,7 +68,11 @@ function product(n) {
         '           <p class="text-mute">Brand: ' +
         listProducts[i].Brand +
         "</p>" +
-        '           <button class="btn btn-warning add-to-cart"> <i class="fas fa-shopping-cart"></i> Add to Cart</button>\n' +
+        '           <button class="btn btn-warning add-to-cart" onclick="addToCart(' +
+        "'" +
+        listProducts[i].ID +
+        "'" +
+        ')"> <i class="fas fa-shopping-cart"></i> Add to Cart</button>\n' +
         '           <button class="btn bg-light select-to-compare" onclick="addToCompare(' +
         "'" +
         listProducts[i].ID +
@@ -96,7 +100,11 @@ function product(n) {
         '           <p class="text-mute">Brand: ' +
         listProducts[i].Brand +
         "</p>" +
-        '           <button class="btn btn-warning add-to-cart"> <i class="fas fa-shopping-cart"></i> Add to Cart</button>\n' +
+        '           <button class="btn btn-warning add-to-cart" onclick="addToCart(' +
+        "'" +
+        listProducts[i].ID +
+        "'" +
+        ')"> <i class="fas fa-shopping-cart"></i> Add to Cart</button>\n' +
         '           <button class="btn bg-light select-to-compare" onclick="addToCompare(' +
         "'" +
         listProducts[i].ID +
@@ -127,7 +135,11 @@ function loadingProducts() {
       '           <p class="text-mute">Brand: ' +
       listProducts[i].Brand +
       "</p>" +
-      '           <button class="btn btn-info add-to-cart"> <i class="fas fa-shopping-cart"></i> Add to Cart</button>\n' +
+      '           <button class="btn btn-warning add-to-cart" onclick="addToCart(' +
+      "'" +
+      listProducts[i].ID +
+      "'" +
+      ')"> <i class="fas fa-shopping-cart"></i> Add to Cart</button>\n' +
       '           <button class="btn btn-light select-to-compare" onclick="addToCompare(' +
       "'" +
       listProducts[i].ID +
@@ -246,3 +258,9 @@ function compareProducts() {
   $.fn.setHeight(0);
   
 }(jQuery));
+
+
+
+
+
+
