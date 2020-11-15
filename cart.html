@@ -59,7 +59,7 @@
                         <button type="button" class="btn login-button mr-sm-4">
                             Join Us
                         </button>
-                        <i class="fas fa-shopping-cart cart-icon"></i>
+                        <a href="./cart.html"><i class="fas fa-shopping-cart cart-icon"></i></a>
                     </div>
                     <div class="d-flex flex-row align-items-center justify-content-end w-100">
                         <div class="navbar">
@@ -94,12 +94,13 @@
 
 <!--Section: Cart-->
 <section id="Cart">
+    <div class="container"><h3 class="mb-4">Your Cart</h3></div>
     <div class="container">
         <!-- San pham order chiem 8 phan -->
         <div class="col-xs-12 col-lg-8"> 
             <div class="card mb-3">
                 <div class="card-body">
-                    <h3 class="mb-4">Your Cart</h3>
+                    
                     <div class="row mb-4">
                         <div class="col-xs-12 col-sm-12 col-md-5 col-lg-3"> <!-- Hinh anh, nho chinh lai so 6 -->
                             <div class="thumbnail mb-3"> <!-- De hinh anh khong nam sat le -->
@@ -153,10 +154,132 @@
                             <span><strong>$53.98</strong></span>
                         </li>
                     </ul>
-                    <button type="button" class="btn btn-primary btn-block ">PROCEED TO CHECKOUT</button>
+                    <button type="button" class="btn btn-primary btn-block">PROCEED TO CHECKOUT</button>
                 </div>
             </div>
         </div>
       <!--Ket thuc phan thanh toan-->
     </div>
-</section>
+
+    <hr class="mb-4">
+
+    <div class="container"> <!--Start form-->
+      <div class="card mb-3"> <!--Phan dien thong tin-->
+        <div class="card-body">
+          <h3 class="mb-3">Please fill in your information</h3>
+          <form class="needs-validation" novalidate> 
+
+            <div class="mb-3">
+              <label for="firstName">Your name</label>
+              <input type="text" class="form-control" id="Name" placeholder="John Smith" value="" required>
+              <div class="invalid-feedback">
+                Valid name is required.
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                  <div class="invalid-feedback">
+                    Please enter a valid email address.
+                  </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Shipping Address</label>
+              <input type="text" class="form-control" id="address" placeholder="123 Hung Vuong Street - Hai Chau District - Danang city" required>
+                <div class="invalid-feedback">
+                  Please enter your shipping address.
+                </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="country">Country</label>
+              <select class="custom-select d-block w-100" id="country" required>
+                <option value="">Choose...</option>
+                  <option>Vietnam</option>
+                 <option>United States</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid country.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="phone">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}" placeholder="0901234567" required>
+              <div class="invalid-feedback">
+                Please enter a valid phone number.
+              </div>
+            </div>
+        
+            <hr class="mb-4">
+
+            <h3 class="mb-3">Payment method</h3>
+            <div class="list-group">
+              <div class="list-group-item">
+                  <label>
+                    <input type="radio" name="optionsRadios" checked>  Cash on Delivery (COD)
+                  </label><br>
+                  <label>
+                    <input type="radio" name="optionsRadios" checked>  Credid Card
+                  </label>
+                  <br>
+                  <label>
+                    <input type="radio" name="optionsRadios" checked>  Internet Banking
+                  </label>
+                  <br>
+              </div>
+            </div>
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Place your order</button>
+          </form>  <!-- end card section -->
+        </section>
+          
+
+
+  
+   <!-- Footer from homepage -->
+   <section id="footer">
+    <div class="container-fluid footer-background">
+        <div class="container">
+            <div class="d-flex flex-row justify-content-center align-items-center">
+                <!-- Shop -->
+                <div class="col-sm-4 justify-content-begin align-items-center">
+                    <p class="footer-header">Shop</p>
+                    <ul class="footer-list">
+                        <li><a href="" class="footer-link">Sale</a></li>
+                        <li><a href="" class="footer-link">Baby</a></li>
+                        <li><a href="" class="footer-link">Boy Clothing</a></li>
+                        <li><a href="" class="footer-link">Girl Clothing</a></li>
+                        <li><a href="" class="footer-link">Formal Wear</a></li>
+                    </ul>
+                </div>
+                <!-- Support -->
+                <div class="col-sm-4 justify-content-begin align-items-center">
+                    <p class="footer-header">Support</p>
+                    <ul class="footer-list">
+                        <li><a href="" class="footer-link">Custom Order</a></li>
+                        <li><a href="" class="footer-link">Delivery</a></li>
+                        <li><a href="" class="footer-link">Returns</a></li>
+                        <li><a href="" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Footer Logo -->
+                <div class="col-sm-4 justify-content-center align-items-center">
+                    <img alt="footer-logo" src="./products/images/tiny-tots-logo.jpg" class="footer-logo" />
+                    <p class="footer-info"><b>Address:</b> 1 Phan Dang Luu Street, Hai Chau District, Danang City, Vietnam</p>
+                    <p class="footer-info"><b>Hotline:</b> +84 236 3681 666</p>
+                    <p class="footer-info"><b>Email:</b> info@tinytots.com</p>
+                    <p class="footer-icon"><i class="fab fa-facebook-square"></i><i class="fab fa-twitter-square"></i><i class="fab fa-instagram-square"></i><i class="fab fa-youtube-square"></i></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> <!-- End Footer -->
+            
+
+
+
+</body>
+</html>
