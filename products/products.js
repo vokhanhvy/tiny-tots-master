@@ -147,6 +147,18 @@ function addToCompare(ID) {
   console.log(compareCount);
   compareID.push(ID);
   console.log(compareID);
+  if (compareCount == 1) {
+    // toastr.success("Please select another product for comparison!", "", {
+    //   timeOut: 1000,
+    // });
+    toastr[
+      "success"
+    ](
+      "</i><a href='' style='font-size: 2rem'>Please select another product for comparison!</a>",
+      "",
+      { timeOut: 1000 }
+    );
+  }
   if (compareCount == 2) {
     compareProducts(compareID);
     compareCount = 0;
@@ -203,7 +215,6 @@ function compareProducts() {
 
   compareID = [];
 }
-
 
 // Add function to make all product cards have equal height 
 
