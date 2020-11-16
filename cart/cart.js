@@ -106,7 +106,7 @@ function displayCartItems() {
       '</p>\n' +
       '                    </div>\n' +
       '                    <div class="">\n' +
-      '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp(); minus(\'' + 
+      '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepDown(); minus(\'' + 
       cartItems[i].ID + 
       '\')">\n' +
       '                            <span class="glyphicon glyphicon-minus"></span>\n' +
@@ -158,12 +158,12 @@ function minus(id) {
           var a =cartItems[i].Quantity;
 	  if(a==0) return; 
 	  a--;
-	  cartItems[0].Quantity= a;
+	  cartItems[i].Quantity= a;
 
       }
   }
 sessionStorage["cart-items"] = JSON.stringify(cartItems);  // add gia tri moi vao session storage
  cartItems = JSON.parse(sessionStorage["cart-items"].toString());
-console.log(arr[i].Quantity);
+console.log(cartItems[i].Quantity);
 
 }
