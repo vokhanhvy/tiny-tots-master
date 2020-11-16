@@ -106,12 +106,12 @@ function displayCartItems() {
       '</p>\n' +
       '                    </div>\n' +
       '                    <div class="">\n' +
-      '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()">\n' +
+      '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp(); minus('\' + 
+      cartItems[i].ID + 
+      '\')">\n' +
       '                            <span class="glyphicon glyphicon-minus"></span>\n' +
       '                        </button>\n' +
-      '                        <input min="0" type="number" onchange="changeQuantity("' + 
-      cartItems[i].ID + 
-      '\")\" value="' +
+      '                        <input min="0" type="number" value="' +
       cartItems[i].Quantity.toString() +
       '">\n' +
       '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()">\n' +
@@ -154,8 +154,9 @@ function changeQuantity(id) {
 }
 function minus(id) {
   for (var i = 0; i < cartItems.length; i++) {
-      if (cartItems[i].ID== id) {
+      if (cartItems[i].ID == id) {
           var a =cartItems[i].Quantity;
+	  if(a==0) return; 
 	  a--;
 	  cartItems[0].Quantity= a;
 
