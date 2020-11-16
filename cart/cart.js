@@ -114,7 +114,9 @@ function displayCartItems() {
       '                        <input min="0" type="number" value="' +
       cartItems[i].Quantity.toString() +
       '">\n' +
-      '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()">\n' +
+      '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()"; add(\'' +
+      cartItems[i].ID + 
+      '\')">\n' +
       '                            <span class="glyphicon glyphicon-plus"></span>\n' +
       '                        </button>\n' +
       '                    </div>\n' +
@@ -150,7 +152,6 @@ function changeQuantity(id) {
   }
   sessionStorage["cart-items"] = JSON.stringify(cartItems);
   cartItems = JSON.parse(sessionStorage["cart-items"].toString());
-  displayCartItems();
 }
 function minus(id) {
   for (var i = 0; i < cartItems.length; i++) {
@@ -164,6 +165,18 @@ function minus(id) {
   }
 sessionStorage["cart-items"] = JSON.stringify(cartItems);  // add gia tri moi vao session storage
  cartItems = JSON.parse(sessionStorage["cart-items"].toString());
-displayCartItems();
+}
+
+function add(id) {
+  for (var i = 0; i < cartItems.length; i++) {
+      if (cartItems[i].ID == id) {
+          var b =cartItems[i].Quantity;
+	  b++;
+	  cartItems[i].Quantity= b;
+
+      }
+  }
+sessionStorage["cart-items"] = JSON.stringify(cartItems);  // add gia tri moi vao session storage
+ cartItems = JSON.parse(sessionStorage["cart-items"].toString());
 
 }
