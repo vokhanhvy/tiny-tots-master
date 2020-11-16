@@ -154,10 +154,10 @@ function changeQuantity(id) {
 }
 function minus(id) {
   for (var i = 0; i < cartItems.length; i++) {
-      if (arr[i].ID== id) {
-          var a =arr[i].Quantity;
+      if (cartItems[i].ID== id) {
+          var a =cartItems[i].Quantity;
 	  a--;
-	  arr[0].Quantity= a;
+	  cartItems[0].Quantity= a;
 
       }
       
