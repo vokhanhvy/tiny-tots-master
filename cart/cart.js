@@ -108,7 +108,7 @@ function displayCartItems() {
       '                    <div class="">\n' +
       '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepDown(); minus(\'' + 
       cartItems[i].ID + 
-      '\')">\n' +
+      '\'); window.location.reload();">\n' +
       '                            <span class="glyphicon glyphicon-minus"></span>\n' +
       '                        </button>\n' +
       '                        <input min="0" type="number" value="' +
