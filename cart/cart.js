@@ -106,11 +106,7 @@ function displayCartItems() {
       '</p>\n' +
       '                    </div>\n' +
       '                    <div class="">\n' +
-      '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp(); minus(\'' + 
-      cartItems[i].ID +
-      '\')>\n' +                    
-      '                             <span class="glyphicon glyphicon-minus"></span>\n' +
-      '                        </button>\n' +
+     
       
       '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()">\n' +
       '                            <span class="glyphicon glyphicon-plus"></span>\n' +
