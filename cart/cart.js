@@ -106,12 +106,12 @@ function displayCartItems() {
       '</p>\n' +
       '                    </div>\n' +
       '                    <div class="">\n' +
-      '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()">\n' +
-      '                            <span class="glyphicon glyphicon-minus"></span>\n' +
+      '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp(); minus(\"' + 
+      cartItems[i].ID +
+      '")>\n' +                    
+      '                             <span class="glyphicon glyphicon-minus"></span>\n' +
       '                        </button>\n' +
-      '                        <input min="0" type="number" onchange="changeQuantity("' + 
-      cartItems[i].ID + 
-      '\")\" value="' +
+      '                            <input min="0" type="number" value="' +
       cartItems[i].Quantity.toString() +
       '">\n' +
       '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()">\n' +
@@ -152,5 +152,17 @@ function changeQuantity(id) {
   cartItems = JSON.parse(sessionStorage["cart-items"].toString());
   displayCartItems();
 }
+function minus(id) {
+  for (var i = 0; i < cartItems.length; i++) {
+      if (arr[i].ID== id) {
+          var a =arr[i].Quantity;
+	  a--;
+	  arr[0].Quantity= a;
 
-htmlString += "<td style='text-align: right'>" + '<input style="width:15%; text-align: center" type="number" onchange="changeUnitQuantity(this, ' + "'" + item.id + "'" + ')" ' + 'value="' + item.quantity + '" ' + 'min="0" step="1">' + "</td>";
+      }
+      
+sessionStorage["cart-items"] = JSON.stringify(cartItems);  // add gia tri moi vao session storage
+ cartItems = JSON.parse(sessionStorage["cart-items"].toString());
+console.log(arr[i].Quantity);
+
+}
