@@ -47,7 +47,7 @@ function addToCart(ID) {
     newItem.Image = addItem[i].Image;
     newItem.Brand = addItem[i].Brand;
     newItem.Price = addItem[i].Price;
-    newItem.Quantity = "1";
+    newItem.Quantity = 1;
   }
   //console.log(newItem);
 
@@ -56,7 +56,7 @@ function addToCart(ID) {
         $.each(cartItems, function (index, value) {
             // if exist, increase quantity
             if (value.ID == newItem.ID) {
-                parseInt(value.Quantity) ++;
+                value.Quantity ++;
                 exists = true;
                 return false;
             }
@@ -112,9 +112,9 @@ function displayCartItems() {
       '                            <span class="glyphicon glyphicon-minus"></span>\n' +
       '                        </button>\n' +
       '                        <input min="0" type="number" value="' +
-      cartItems[i].Quantity +
+      cartItems[i].Quantity.toString() +
       '"; window.location.reload();>\n' +
-      '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()"; add(\'' +
+      '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp(); add(\'' +
       cartItems[i].ID + 
       '\')">\n' +
       '                            <span class="glyphicon glyphicon-plus"></span>\n' +
@@ -141,25 +141,13 @@ function displayCartItems() {
   }
 }
 
-function changeQuantity(id) {
-  var a = this.parentNode.querySelector(input[type=number]);
-  var ipValue = a;
-  for (var i = 0; i < cartItems.length; i++) {
-      if (cartItems[i].ID == id) {
-          cartItems[i].Quantity = ipValue;
-          break;
-      }
-  }
-  sessionStorage["cart-items"] = JSON.stringify(cartItems);
-  cartItems = JSON.parse(sessionStorage["cart-items"].toString());
-}
 function minus(id) {
   for (var i = 0; i < cartItems.length; i++) {
       if (cartItems[i].ID == id) {
-          var a =parseInt(cartItems[i].Quantity);
+          var a =cartItems[i].Quantity;
 	  if(a==0) return; 
 	  a--;
-	  cartItems[i].Quantity= a.toString();
+	  cartItems[i].Quantity= a;
 
       }
   }
@@ -170,9 +158,9 @@ sessionStorage["cart-items"] = JSON.stringify(cartItems);  // add gia tri moi va
 function add(id) {
   for (var i = 0; i < cartItems.length; i++) {
       if (cartItems[i].ID == id) {
-          var b =parseInt(cartItems[i].Quantity);
+          var b =cartItems[i].Quantity;
 	  b++;
-	  cartItems[i].Quantity= b.toString();
+	  cartItems[i].Quantity= b;
 
       }
   }
