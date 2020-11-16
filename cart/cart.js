@@ -106,8 +106,14 @@ function displayCartItems() {
       '</p>\n' +
       '                    </div>\n' +
       '                    <div class="">\n' +
-     
-      
+      '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()">\n' +
+      '                            <span class="glyphicon glyphicon-minus"></span>\n' +
+      '                        </button>\n' +
+      '                        <input min="0" type="number" onchange="changeQuantity("' + 
+      cartItems[i].ID + 
+      '\")\" value="' +
+      cartItems[i].Quantity.toString() +
+      '">\n' +
       '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()">\n' +
       '                            <span class="glyphicon glyphicon-plus"></span>\n' +
       '                        </button>\n' +
@@ -128,8 +134,8 @@ function displayCartItems() {
       '    </div>\n' +
       '   </div>'
     }  
-  
-  
+
+
   }
 }
 
