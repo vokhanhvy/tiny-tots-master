@@ -112,7 +112,7 @@ function displayCartItems() {
       '                             <span class="glyphicon glyphicon-minus"></span>\n' +
       '                        </button>\n' +
       '                            <input min="0" type="number" value="' +
-      cartItems[i].Quantity.toString() +
+      cartItems[i].Quantity +
       '">\n' +
       '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()">\n' +
       '                            <span class="glyphicon glyphicon-plus"></span>\n' +
