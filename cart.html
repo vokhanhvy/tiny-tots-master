@@ -43,7 +43,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 </head>
 
-<body onload="loadingProducts()"> 
+<body> 
 
 
 
@@ -94,146 +94,8 @@
 
 <!--Section: Cart-->
 <section id="Cart">
-    <div class="container"><h3 class="mb-4">Your Cart</h3></div>
-    <div class="container">
-        <!-- San pham order chiem 8 phan -->
-        <div class="col-xs-12 col-lg-8"> 
-            <div class="card mb-3">
-                <div class="card-body">
-                    
-                    <div class="row mb-4">
-                        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-3"> <!-- Hinh anh, nho chinh lai so 6 -->
-                            <div class="thumbnail mb-3"> <!-- De hinh anh khong nam sat le -->
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg">
-                            </div> <!-- KEt thuc Hinh anh san pham -->
-                        </div> <!-- KEt thuc Hinh anh san pham -->
-                        <div class=" col-xs-12 col-sm-12 col-md-7 col-lg-9">
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                    <h5>Blue denim shirt</h5>
-                                    <p class="mb-3 text-muted small">Brand: Johnson</p>
-                                    <!-- <p class="mb-3 text-muted text-uppercase small">Size: M</p> -->
-                                </div>
-                                <div class="">
-                                    <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                        <span class="glyphicon glyphicon-minus"></span>
-                                    </button>
-                                    <input min="0" value="1" type="number">
-                                    <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                        <span class="glyphicon glyphicon-plus"></span>
-                                    </button>
-                                </div>
-                            </div> <!-- ket thuc so luong va describe san pham -->
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <a href="#!" type="button" class=" small mr-3"><i class="fas fa-trash-alt mr-1"></i> Remove item </a>
-                                    <!-- <a href="#!" type="button" class="card-link-secondary small text-uppercase"><i
-                                    class="fas fa-heart mr-1"></i> Move to wish list </a> -->
-                                </div>
-                                <p class="mb-0"><span><strong>$17.99</strong></span></p>
-                            </div> <!-- ket thuc remove va gia tien -->
-                        </div> <!-- ket thuc phan describe ben canh san pham -->
-                    </div> <!-- ket thuc phan card san pham -->
-                    <hr class="mb-4">
-                </div>
-            </div>
-        </div>
-            
-        <div class="col-xs-12 col-lg-4"> <!-- phan gia tien -->
-            <div class="card mb-3">
-                <div class="card-body">
-                    <ul class="list-group ">
-                        <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                             Temporary Amount<span>$25.98</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
-                            <div>
-                                <strong>Total Amount</strong>
-                                <strong><p class="mb-0">(including VAT)</p></strong>
-                            </div>
-                            <span><strong>$53.98</strong></span>
-                        </li>
-                    </ul>
-                    <button type="button" class="btn btn-primary btn-block">PROCEED TO CHECKOUT</button>
-                </div>
-            </div>
-        </div>
-      <!--Ket thuc phan thanh toan-->
-    </div>
-
-    <hr class="mb-4">
-
-    <div class="container"> <!--Start form-->
-      <div class="card mb-3"> <!--Phan dien thong tin-->
-        <div class="card-body">
-          <h3 class="mb-3">Please fill in your information</h3>
-          <form class="needs-validation" novalidate> 
-
-            <div class="mb-3">
-              <label for="firstName">Your name</label>
-              <input type="text" class="form-control" id="Name" placeholder="John Smith" value="" required>
-              <div class="invalid-feedback">
-                Valid name is required.
-              </div>
-            </div>
-            
-            <div class="mb-3">
-              <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                <input type="email" class="form-control" id="email" placeholder="email@example.com">
-                  <div class="invalid-feedback">
-                    Please enter a valid email address.
-                  </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="address">Shipping Address</label>
-              <input type="text" class="form-control" id="address" placeholder="123 Hung Vuong Street - Hai Chau District - Danang city" required>
-                <div class="invalid-feedback">
-                  Please enter your shipping address.
-                </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="country">Country</label>
-              <select class="custom-select d-block w-100" id="country" required>
-                <option value="">Choose...</option>
-                  <option>Vietnam</option>
-                 <option>United States</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid country.
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="phone">Phone Number</label>
-              <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}" placeholder="0901234567" required>
-              <div class="invalid-feedback">
-                Please enter a valid phone number.
-              </div>
-            </div>
-        
-            <hr class="mb-4">
-
-            <h3 class="mb-3">Payment method</h3>
-            <div class="list-group">
-              <div class="list-group-item">
-                  <label>
-                    <input type="radio" name="optionsRadios" checked>  Cash on Delivery (COD)
-                  </label><br>
-                  <label>
-                    <input type="radio" name="optionsRadios" checked>  Credid Card
-                  </label>
-                  <br>
-                  <label>
-                    <input type="radio" name="optionsRadios" checked>  Internet Banking
-                  </label>
-                  <br>
-              </div>
-            </div>
-            <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Place your order</button>
-          </form>  <!-- end card section -->
-        </section>
+    
+</section>
           
 
 
@@ -279,6 +141,11 @@
 </section> <!-- End Footer -->
             
 
+ <!-- AOS Animation JS -->
+ <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+
+ <!-- Toastr -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <script src="./cart/cart.js"></script>
 </body>

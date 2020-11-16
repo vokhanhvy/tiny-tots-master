@@ -1,34 +1,11 @@
-// JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
 
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
+// Function add to cart
 
 
-
-// add to cart
-
-
-let cartItems = [];  // to store selected Items
-let addCartItems = []; // to derive selected items information
+let cartItems = [];  
+let addCartItems = []; 
 
 $(document).ready(function () {
-// check if sessionStorage["cart-items"] exist?
 if (sessionStorage["cart-items"] != null) {
     cartItems = JSON.parse(sessionStorage["cart-items"].toString());
 }
@@ -37,51 +14,59 @@ displayCartItems();
 
 
 function addToCart(ID) {
-addCartItems.push(ID); // select ID of product when click add to cart
-let addItem = listProducts.filter((item) => item.ID === addCartItems[addCartItems.length-1]); // select all field of product
 
-var newItem = {};  // convert array to object
-for (var i= 0; i < addItem.length; i++) {
-  newItem.ID = addItem[i].ID;
-  newItem.Name = addItem[i].Name;
-  newItem.Image = addItem[i].Image;
-  newItem.Brand = addItem[i].Brand;
-  newItem.Price = addItem[i].Price;
-  newItem.Quantity = 1;
-}
+  toastr[
+    "success"
+  ](
+    "</i><a href='' style='font-size: 2rem'>You have selected one item</a>",
+    "",
+    { timeOut: 1000 }
+  );
+
+  addCartItems.push(ID); 
+  let addItem = listProducts.filter((item) => item.ID === addCartItems[addCartItems.length-1]); 
+  
+  var newItem = {};  
+  for (var i= 0; i < addItem.length; i++) {
+    newItem.ID = addItem[i].ID;
+    newItem.Name = addItem[i].Name;
+    newItem.Image = addItem[i].Image;
+    newItem.Brand = addItem[i].Brand;
+    newItem.Price = addItem[i].Price;
+    newItem.Quantity = 1;
+  }
 //console.log(newItem);
 
-var exists = false;
-  if (cartItems.length > 0) {
-      $.each(cartItems, function (index, value) {
-          // if exist, increase quantity
-          if (value.ID == newItem.ID) {
-              value.Quantity ++;
-              exists = true;
-              return false;
-          }
-      });
+  var exists = false;
+    if (cartItems.length > 0) {
+        $.each(cartItems, function (index, value) {
+            // if exist, increase quantity
+            if (value.ID == newItem.ID) {
+                value.Quantity ++;
+                exists = true;
+                return false;
+            }
+        });
+    }
+
+
+  if (!exists) {
+    cartItems.push(newItem);
   }
+  
+  //console.log(cartItems);
 
-// if not exist, push to cartItems list
-if (!exists) {
-  cartItems.push(newItem);
-}
 
-console.log(cartItems);
-
-// Lưu thông tin vào sessionStorage
-sessionStorage["cart-items"] = JSON.stringify(cartItems); // Chuyển thông tin mảng shoppingCartItems sang JSON trước khi lưu vào sessionStorage
-// Gọi hàm hiển thị giỏ hàng
-displayCartItems();
-
+  sessionStorage["cart-items"] = JSON.stringify(cartItems); 
+  
+  displayCartItems();
 }
 
 function displayCartItems() {
 var firstBlock ='' ;
 var total = 0;
 if (sessionStorage["cart-items"] != null) {
-  cartItems = JSON.parse(sessionStorage["cart-items"].toString()); // Chuyển thông tin từ JSON trong sessionStorage sang mảng shoppingCartItems.
+  cartItems = JSON.parse(sessionStorage["cart-items"].toString()); 
   for (var i = 0; i < cartItems.length; i++) {
     //document.getElementById("Cart").innerHTML +=
     firstBlock +=
@@ -143,7 +128,7 @@ if (sessionStorage["cart-items"] != null) {
   }  
   document.getElementById("Cart").innerHTML = 
     '<div class="container"><h3 class="mb-4">Your Cart</h3></div>\n' +
-    ' <div class="container">\n' + firstBlock +
+    ' <div class="container ">\n' + firstBlock +
 
     '  <div class="col-xs-12 col-lg-4"> \n' +
     '          <div class="card mb-3"> \n' +
@@ -161,7 +146,7 @@ if (sessionStorage["cart-items"] != null) {
     '                          </div> \n' +
     '                          <span><strong>' +
     total.toFixed(2) +
-    '</strong></span> \n' +
+    ' USD</strong></span> \n' +
     '                      </li> \n' +
     '                  </ul> \n' +
     '                  <a href="#cart-form"><button type="button" class="btn btn-primary btn-block">PROCEED TO CHECKOUT</button></a> \n' +
@@ -169,6 +154,9 @@ if (sessionStorage["cart-items"] != null) {
     '          </div> \n' +
     '      </div> \n' +
     '</div>' +
+    '<br> \n' +
+    '<br> \n' +
+    '<br> \n' +
     '<br> \n' +
     '<br> \n' +
     '<br> \n' +
@@ -244,7 +232,7 @@ if (sessionStorage["cart-items"] != null) {
     '          </div> \n' +
     '        </div> \n' +
     '        <hr class="mb-4"> \n' +
-    '        <button class="btn btn-primary btn-lg btn-block" type="submit">Place your order</button> \n' +
+    '        <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="checkForm()">Place your order</button> \n' +
     '      </form>  <!-- end card section --></br> \n';
 
  }
@@ -260,7 +248,7 @@ for (var i = 0; i < cartItems.length; i++) {
 
     }
 }
-sessionStorage["cart-items"] = JSON.stringify(cartItems);  // add gia tri moi vao session storage
+sessionStorage["cart-items"] = JSON.stringify(cartItems);  
 cartItems = JSON.parse(sessionStorage["cart-items"].toString());
 }
 
@@ -273,12 +261,29 @@ for (var i = 0; i < cartItems.length; i++) {
 
     }
 }
-sessionStorage["cart-items"] = JSON.stringify(cartItems);  // add gia tri moi vao session storage
+sessionStorage["cart-items"] = JSON.stringify(cartItems);  
 cartItems = JSON.parse(sessionStorage["cart-items"].toString());
 
 }
 
+//End add to cart 
 
-function showForm() {
-  $("#cart-form").removeClass('d-none');
-}
+
+
+// function to validate form
+
+function checkForm() {
+   // Fetch all the forms we want to apply custom Bootstrap validation styles to
+   var forms = document.getElementsByClassName('needs-validation');
+
+   // Loop over them and prevent submission
+   var validation = Array.prototype.filter.call(forms, function(form) {
+     form.addEventListener('submit', function(event) {
+       if (form.checkValidity() === false) {
+         event.preventDefault();
+         event.stopPropagation();
+       }
+       form.classList.add('was-validated');
+     }, false);
+   });
+ } false;

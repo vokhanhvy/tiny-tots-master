@@ -43,7 +43,7 @@
   height: 100%; 
 }
 .thumbnail{
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: transform .5s ease;
 }
 .thumbnail:hover{

@@ -122,13 +122,13 @@ function loadingProducts() {
     document.getElementById("product-list").innerHTML +=
       '<div class="col-xs-12 col-sm-6 col-md-4 d-flex item" data-aos="flip-left">\n' +
       '   <div class="thumbnail">\n' +
-      '       <img src="./products/images/' +
+      '       <a href="./productdetail.html"><img src="./products/images/' +
       listProducts[i].Image +
-      '" >\n' +
+      '"></a>\n' +
       '       <div class="caption">\n' +
-      '           <h3 class="text-danger">' +
+      '           <a href="./productdetail.html"><h3 class="text-danger">' +
       listProducts[i].Name +
-      "</h3>\n" +
+      "</h3></a>\n" +
       '           <h4 class="text-success">' +
       listProducts[i].Price.toString() +
       " USD</h4>" +
