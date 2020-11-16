@@ -113,10 +113,10 @@ function displayCartItems() {
       '                        </button>\n' +
       '                        <input min="0" type="number" value="' +
       cartItems[i].Quantity.toString() +
-      '"; window.location.reload();>\n' +
+      '">\n' +
       '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp(); add(\'' +
       cartItems[i].ID + 
-      '\')">\n' +
+      '\'); window.location.reload();">\n' +
       '                            <span class="glyphicon glyphicon-plus"></span>\n' +
       '                        </button>\n' +
       '                    </div>\n' +
@@ -126,7 +126,7 @@ function displayCartItems() {
       '                        <a href="#!" type="button" class=" small mr-3"><i class="fas fa-trash-alt mr-1"></i> Remove this Item </a>\n' +
       '                    </div>\n' +
       '                    <p class="mb-0"><span><strong>\n' +
-      parseFloat(cartItems[i].Price) * parseInt(cartItems[i].Quantity)  +
+      parseFloat(cartItems[i].Price) * cartItems[i].Quantity  +
       ' USD</strong></span></p>\n' +
       '                </div> \n' +
       '            </div> \n' +
