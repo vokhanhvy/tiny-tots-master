@@ -160,7 +160,7 @@ function minus(id) {
 	  cartItems[0].Quantity= a;
 
       }
-      
+  }
 sessionStorage["cart-items"] = JSON.stringify(cartItems);  // add gia tri moi vao session storage
  cartItems = JSON.parse(sessionStorage["cart-items"].toString());
 console.log(arr[i].Quantity);
