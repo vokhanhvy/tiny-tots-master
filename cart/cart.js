@@ -113,7 +113,7 @@ function displayCartItems() {
       '                        </button>\n' +
       '                        <input min="0" type="number" value="' +
       cartItems[i].Quantity +
-      '">\n' +
+      '"; window.location.reload();>\n' +
       '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()"; add(\'' +
       cartItems[i].ID + 
       '\')">\n' +
