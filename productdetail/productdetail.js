@@ -54,10 +54,6 @@ getProduct[getProduct.length-1].Image +
 '"><li>'\n' +
 '    </ol>\n' +
 '	</div>';
-   
-}
-$(document).ready(function(){
-    $("button").click(function(){
-        $("a")[0].click();
-    });
-});
+ window.open("./productdetail.html");  
+};
+
