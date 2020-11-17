@@ -12,7 +12,7 @@ let getProduct = [];
 
 function productDetail(ID) {
 
- window.open("./productdetail.html");  
+ 
  selectProduct.push(ID); 
 getProduct = listProductsforCart.filter((item) => item.ID === selectProduct[selectProduct.length-1]); // read list product from json data
 
@@ -56,5 +56,7 @@ getProduct[getProduct.length-1].Image +
 '"><li>\n' +
 '    </ol>\n' +
 '	</div>';
+ 
+ window.open("./productdetail.html");  
 };
 
