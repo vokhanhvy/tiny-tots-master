@@ -164,6 +164,11 @@ function loadingProducts() {
       listProducts[i].ID +
       "'" +
       ')"> <i class="fas fa-shopping-cart"></i> Add to Cart</button>\n' +
+      '           <button class="btn btn-light select-to-compare" onclick="productDetail(' +
+      "'" +
+      listProducts[i].ID +
+      "'" +
+      ')">Detail</button>\n' +
       '           <button class="btn btn-light select-to-compare" onclick="addToCompare(' +
       "'" +
       listProducts[i].ID +
