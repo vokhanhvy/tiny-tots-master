@@ -50,6 +50,9 @@
   transform: scale(1.02);
 }
 
+a {
+   cursor: pointer;
+}
 
 /* Comparing modal */
 
