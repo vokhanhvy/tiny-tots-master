@@ -137,20 +137,20 @@ function loadingProducts() {
   for (let i in listProducts) {
     document.getElementById("product-list").innerHTML +=
       '<div class="col-xs-12 col-sm-6 col-md-4 d-flex item" data-aos="flip-left">\n' +
-      '   <div class="thumbnail">\n' +
-      '       <a href="./productdetail.html" onclick="productDetail(' +
-      "'" +
-      listProducts[i].ID +
-      "'" +  
-      '"><img src="./products/images/' +
+      '   <div class="thumbnail">\n' +       
+      '<img src="./products/images/' +
       listProducts[i].Image +
-      '" ></a>\n' +
-      '       <div class="caption">\n' +
-      '           <a href="./productdetail.html" onclick="productDetail(' +
+      '" onclick="productDetail(' +
       "'" +
       listProducts[i].ID +
-      "'" +  
-      '"><h3 class="text-danger">' +
+      "'" + 
+      '); window.open(\'./productdetail.html\')">\n' +
+      '       <div class="caption">\n' +
+      'h3 class="text-danger" onclick="productDetail(' +
+      "'" +
+      listProducts[i].ID +
+      "'" + 
+      '); window.open(\'./productdetail.html\')">\n' +>' +
       listProducts[i].Name +
       "</h3></a>\n" +
       '           <h4 class="text-success">' +
