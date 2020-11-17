@@ -51,7 +51,7 @@ getProduct[getProduct.length-1].Image +
 '"><li>\n' +
 '       <li data-target="#myCarousel" data-slide-to="0" class="active" ><img src="./products/images/' +
 getProduct[getProduct.length-1].Image +
-'"><li>'\n' +
+'"><li>\n' +
 '    </ol>\n' +
 '	</div>';
  window.open("./productdetail.html");  
