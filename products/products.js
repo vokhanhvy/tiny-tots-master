@@ -55,11 +55,19 @@ function product(n) {
       document.getElementById("product-list").innerHTML +=
         '<div class="col-xs-12 col-sm-6 col-md-4 d-flex item" data-aos="flip-left">\n' +
         '   <div class="thumbnail">\n' +
-        '       <a href="./productdetail.html"><img src="./products/images/' +
+        '       <a href="./productdetail.html" onclick="productDetail(' +
+        "'" +
+        listProducts[i].ID +
+        "'" +  
+        '"><img src="./products/images/' +
         listProducts[i].Image +
         '" ></a>\n' +
         '       <div class="caption">\n' +
-        '           <a href="./productdetail.html"><h3 class="text-danger">' +
+        '           <a href="./productdetail.html" onclick="productDetail(' +
+        "'" +
+        listProducts[i].ID +
+        "'" +  
+        '"><h3 class="text-danger">' +
         listProducts[i].Name +
         "</h3></a>\n" +
         '           <h4 class="text-success">' +
@@ -87,11 +95,19 @@ function product(n) {
       document.getElementById("product-list").innerHTML +=
         '<div class="col-xs-12 col-sm-6 col-md-4 d-flex item" data-aos="flip-left">\n' +
         '   <div class="thumbnail">\n' +
-        '       <a href="./productdetail.html"><img src="./products/images/' +
+        '       <a href="./productdetail.html" onclick="productDetail(' +
+        "'" +
+        listProducts[i].ID +
+        "'" +  
+        '"><img src="./products/images/' +
         listProducts[i].Image +
         '" ></a>\n' +
         '       <div class="caption">\n' +
-        '           <a href="./productdetail.html"><h3 class="text-danger">' +
+        '           <a href="./productdetail.html" onclick="productDetail(' +
+        "'" +
+        listProducts[i].ID +
+        "'" +  
+        '"><h3 class="text-danger">' +
         listProducts[i].Name +
         "</h3></a>\n" +
         '           <h4 class="text-success">' +
@@ -122,11 +138,19 @@ function loadingProducts() {
     document.getElementById("product-list").innerHTML +=
       '<div class="col-xs-12 col-sm-6 col-md-4 d-flex item" data-aos="flip-left">\n' +
       '   <div class="thumbnail">\n' +
-      '       <a href="./productdetail.html"><img src="./products/images/' +
+      '       <a href="./productdetail.html" onclick="productDetail(' +
+      "'" +
+      listProducts[i].ID +
+      "'" +  
+      '"><img src="./products/images/' +
       listProducts[i].Image +
-      '"></a>\n' +
+      '" ></a>\n' +
       '       <div class="caption">\n' +
-      '           <a href="./productdetail.html"><h3 class="text-danger">' +
+      '           <a href="./productdetail.html" onclick="productDetail(' +
+      "'" +
+      listProducts[i].ID +
+      "'" +  
+      '"><h3 class="text-danger">' +
       listProducts[i].Name +
       "</h3></a>\n" +
       '           <h4 class="text-success">' +
