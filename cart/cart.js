@@ -1,5 +1,10 @@
-
-// Function add to cart
+let listProductsforCart = [];  //read from json
+fetch("./products/product-data.json")
+   .then((res) => res.json())
+   .then((data) => {
+     listProductsforCart = data;
+   });
+ Function add to cart
 
 
 let cartItems = [];  
@@ -24,7 +29,7 @@ function addToCart(ID) {
   );
 
   addCartItems.push(ID); 
-  let addItem = listProducts.filter((item) => item.ID === addCartItems[addCartItems.length-1]); 
+  let addItem = listProductsforCart.filter((item) => item.ID === addCartItems[addCartItems.length-1]); // read list product from json data
   
   var newItem = {};  
   for (var i= 0; i < addItem.length; i++) {
