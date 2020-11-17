@@ -146,7 +146,7 @@ function loadingProducts() {
       "'" + 
       '); window.open(\'./productdetail.html\')">\n' +
       '       <div class="caption">\n' +
-      'h3 class="text-danger" onclick="productDetail(' +
+      '<h3 class="text-danger" onclick="productDetail(' +
       "'" +
       listProducts[i].ID +
       "'" + 
