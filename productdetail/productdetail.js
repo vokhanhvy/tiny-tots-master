@@ -56,3 +56,8 @@ getProduct[getProduct.length-1].Image +
 '	</div>';
    
 }
+$(document).ready(function(){
+    $("button").click(function(){
+        $("a")[0].click();
+    });
+});
