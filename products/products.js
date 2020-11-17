@@ -150,7 +150,7 @@ function loadingProducts() {
       "'" +
       listProducts[i].ID +
       "'" + 
-      '); window.open(\'./productdetail.html\')">\n' +>' +
+      '); window.open(\'./productdetail.html\')">\n'  +
       listProducts[i].Name +
       "</h3></a>\n" +
       '           <h4 class="text-success">' +
