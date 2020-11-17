@@ -4,7 +4,7 @@ fetch("./products/product-data.json")
    .then((data) => {
      listProductsforCart = data;
    });
- Function add to cart
+
 
 
 let cartItems = [];  
