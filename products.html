@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TinyTots Cart</title>
+    <title>TinyTots Products</title>
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -19,9 +19,6 @@
 
     <!-- Product CSS -->
     <link rel="stylesheet" href="./products/products.css">
-
-    <!-- Product CSS -->
-    <link rel="stylesheet" href="./cart/cart.css">
 
     <!-- AOS Animation CSS anh Linh -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css" />
@@ -41,55 +38,6 @@
 
      <!-- Toastr -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-
-	<style>
- .carousel {
-  height: 80%;
-}
-        
-#myCarousel .carousel-indicators {
-    margin: 10px 0 0;
-    
-    position: static;
-   
-    
-    width: 100%;
-}
-
-#myCarousel .carousel-indicators li {
-   
-   
-    display: inline-block;
-    
-   
-    
-    width:100px;
-    height:100px;
-   
-}
-#myCarousel  .carousel-indicators li img {
-    display: block;
-width:100px;
-    height:100px;
-    
-}
-
-#myCarousel .carousel-outer {
-    position: relative;
-}
-
-/* remove arrow sign in input type=number */
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-	</style>
 </head>
 
 <body onload="loadingProducts()"> 
@@ -142,188 +90,146 @@ input[type=number] {
 
 
 
-    
-    <section id="product-detail"> <!--Start product detail session-->
+  <section id="brand" data-aos="fade-up"> <!-- start Brands section -->
+    <div class="container div-contain"  data-aos="zoom-in">
+      <div class="col-xs-12 " >
+        <h1>BRANDS</h1>
+        <h4>Browse our full range of baby products from trusted Brands</h4> <br>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12 category text-center">
+        <a href="#link" onclick="product('Johnson')" ><img src="./products/images/Brands/johnson.png" class="img-brand zoom" alt="" ></a>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12 category text-center">
+        <a href="#link" onclick="product('Pampers')" ><img src="./products/images/brands/pamper.png" class="img-brand " alt="" ></a>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12 category text-center">
+        <a href="#link" onclick="product('Lego')" ><img src="./products/images/brands/lego.png" class="img-brand" alt="" ></a>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12 category text-center">
+        <a href="#link" onclick="product('Pigeon')" ><img src="./products/images/brands/pigeon.png" class="img-brand" alt="" ></a>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12 category text-center">
+        <a href="#link" onclick="product('Kids')" ><img src="./products/images/brands/kids.png" class="img-brand" alt="" ></a>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12 category text-center">
+        <a href="#link" onclick="product('Baby Comfy')" ><img src="./products/images/brands/babycomfy.png" class="img-brand" alt="" ></a>
+      </div>
+    </div>  
+  </section> <!-- end Brands section -->
 
-      <div class="row"> <!--Hinh anh va description-->
-      
-        <div class="col-md-5 col-sm-12 mb-4 ml-5 pl-4 d-flex justify-content-center align-item-center  "> <!--start phan hinh anh-->
-          <div id="myCarousel" class="carousel slide" data-ride="carousel"> <!--start phan carousel -->
-            <!--carousel Slides--> <!-- Indicators -->
-            
-            <!--/.ket thuc carousel Slides--> <!-- Indicators -->
-
-	     <!-- Wrapper for slides -->
-	
-    
-  	  <div class="carousel-inner">
-    		<div class="item active">
-    	 		<img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" >
-    		</div> <!-- ket thuc slide 1 -->
-
-   		<div class="item">
-   			 <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13.jpg">
-   		</div> <!-- ket thuc slide 2 -->
-
-    		<div class="item">
-     			<img  src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg" >
-   		</div> <!-- ket thuc slide 3 -->
- 	  </div> <!-- KEt thuc phan Wrapper for slides carousel-inner -->
-         
-            <!--Controls-->
-            <!-- Left and right controls -->
-  		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    			<span class="glyphicon glyphicon-chevron-left"></span>
-    			<span class="sr-only">Previous</span>
-  		</a> <!-- KEt thuc left control -->
-  		<a class="right carousel-control" href="#myCarousel" data-slide="next">
-    			<span class="glyphicon glyphicon-chevron-right"></span>
-    			<span class="sr-only">Next</span>
- 		 </a> <!-- KEt thuc right control -->
-
-       <ol class='carousel-indicators'>
-        <li data-target='#myCarousel' data-slide-to="0" class="active" ><img src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg'  /><li>
-        <li data-target='#myCarousel' data-slide-to="1"><img src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13.jpg'  /></li>
-        <li data-target='#myCarousel' data-slide-to="2"><img src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg'  /></li>
-        </ol>
+  <section id="category" data-aos="fade-up"> <!-- start Categories section -->
+    <div class="container div-contain" data-aos="zoom-in">
+      <div class="col-xs-12" > 
+        <h2>ALL CATEGORIES</h2> <br>
+      </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 category " onclick="product('Baby Care')" >
+          <a href="#link" onclick="product('Baby Care')">Baby Care</a>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 category" onclick="product('Fashion')" >
+          <a href="#link" onclick="product('Fashion')">Fashion</a>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 category" onclick="product('Toys')" >
+          <a href="#link" onclick="product('Toy')">Toys</a>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 category" onclick="product('Wellness and Hygiene')" >
+          <a href="#link" onclick="product('Wellness and Hygiene')">Wellness and Hygiene</a>
+        </div>
+    </div>     
+  </section> <!-- End Categories section -->
   
+  <section data-aos="fade-up"> <!-- Start Products link section -->
+    <div class="container div-contain1" id="link">
+      <ul class="breadcrumb">
+        <li><a onclick="loadingProducts()" href="#">OUR PRODUCTS</a></li>
+        <li class="active" id="active_page"></li>
+      </ul>
+      </div>
+  </section> <!-- End Products links section -->
 
-	
-	</div> <!-ket thuc phan carousel -->
-          
-       
-          
-
-     </div> <!-ket thuc phan hinh anh -->
-        <div class="col-md-6 ml-4"> <!--phan description -->
-         <div class=" container mb-3 ml-4 col-md-12  col-sm-12"> <!--start description all -->
-          <h3><strong>Product Name</strong></h3> <!--ten san pham -->
-          
-          <p><span class="mr-1"><strong>$99.99</strong></span></p>
-          
-
-		<div class=" mt-3 mb-3 ">  <!--start phan size -->
-                      <p> Select Size </p>
-                      <div class="form-check form-check-inline pl-4">
-                        <input type="radio" class="form-check-input"  name="materialExampleRadios" >
-                        <label class="form-check-label small  card-link-secondary"
-                          for="small">1 - 3 yrs.</label>
-                      </div>
-                      <div class="form-check form-check-inline pl-4">
-                        <input type="radio" class="form-check-input" name="materialExampleRadios" >
-                        <label class="form-check-label small  card-link-secondary"
-                          for="medium">3 - 5 yrs.</label>
-                      </div>
-                      <div class="form-check form-check-inline pl-4">
-                        <input type="radio" class="form-check-input" name="materialExampleRadios">
-                        <label class="form-check-label small  card-link-secondary"
-                          for="large">5 - 7 yrs.</label>
-                      </div>
-          	      <div class="form-check form-check-inline pl-4">
-                        <input type="radio" class="form-check-input" name="materialExampleRadios">
-                        <label class="form-check-label small  card-link-secondary"
-                          for="large">7 - 10 yrs.</label>
-                      </div>
-                     <div class="form-check form-check-inline pl-4">
-                        <input type="radio" class="form-check-input" name="materialExampleRadios">
-                        <label class="form-check-label small  card-link-secondary"
-                          for="large">10 - 12 yrs.</label>
-                      </div>
-                  </div>  <!--ket thuc phan size -->
-                  
-            
-
-             	<div class="mt-3 mb-3 "> <!--start phan so luong -->
-                         <p>Select Quantity <p>
-    			<button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector('input[type=number]').stepDown(); minus();">
-   				 <span class="glyphicon glyphicon-minus"></span>
-       			</button>
-     			<input min="0" type="number" value="1">
-                         <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector('input[type=number]').stepUp(); add();">
-   				 <span class="glyphicon glyphicon-plus"></span>
-       			</button>
-   
-                 </div> <!--end phan so luong -->
-                 
-                <div> <!--start phan add to cart -->
-
-                 <button class="btn btn-warning add-to-cart mt-4 mb-4" onclick="addToCart()"> <i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                </div> <!--end phan add to cart -->
-
-   </div> <!--end description all -->
-</div> <!--end phan description -->
-
-</div> <!--end phan div row hinh anh va detail -->
-
-<hr>
-
- <div class="container"> <!--start phan description and information, div tong -->
-    <div class="container classic-tabs">  <!--start phan description and information -->
-
-      <ul class="nav tabs-primary nav-justified" id="advancedTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active show" id="description-tab" data-toggle="tab" href="#description" role="tab"
-            aria-controls="description" aria-selected="true">Description</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info"
-            aria-selected="false">Information</a>
-        </li>
-      
-      </ul> <!--ket thuc thanh ngang description and information -->
-
-
-      <div class="tab-content container" id="advancedTabContent"> <!--start noi dung phan description -->
-
-        <div class="tab-pane fade show active col-xs-12" id="description" role="tabpanel" aria-labelledby="description-tab">
-          <br>
-          <p class="pt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit
-            error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio,
-            officia quis dolore quos sapiente tempore alias.</p>
-        </div> <!--end noi dung phan description -->
-
-        <div class="tab-pane fade col-xs-12" id="info" role="tabpanel" aria-labelledby="info-tab"> <!--start noi dung phan information, day se la table  -->
-          <br>
-          <table class="table comparing-table"> <!--start table  -->
+  <section> <!--  start product cards section-->
+    <div class="container" > 
+      <div class="row">
+      <div class="content_product row d-flex flex-wrap text-center" id="product-list"></div>
+    </div>
+  </section> <!-- End Products cards section -->
+  
+  <!-- Comparing modal -->
+  <section id="comparing-modal">
+    <div class="container modal-content">
+      <span id="compare-modal-close">&times;</span>
+      <table class="table comparing-table">
         <thead></thead>
         <tbody>
-          
-          
-	  <tr>
-            <th scope="row">Brand</th>
-            <td id="compare-brand-1"></td>
-           
+          <tr>
+            <th scope="row"></th>
+            <td id="compare-photo-1"></td>
+            <td id="compare-photo-2"></td>
           </tr>
-
+          <tr>
+            <th scope="row">Product Name</th>
+            <td id="compare-name-1"></td>
+            <td id="compare-name-2"></td>
+          </tr>
           <tr>
             <th scope="row">Category</th>
             <td id="compare-category-1"></td>
-           
+            <td id="compare-category-2"></td>
           </tr>
-          
-         
+          <tr>
+            <th scope="row">Brand</th>
+            <td id="compare-brand-1"></td>
+            <td id="compare-brand-2"></td>
+          </tr>
+          <tr>
+            <th scope="row">Price</th>
+            <td id="compare-price-1"></td>
+            <td id="compare-price-2"></td>
+          </tr>
         </tbody>
-      </table>      <!--end table  -->
-        </div> <!--end noi dung phan information  -->
-  </div> <!--end noi dung phan description va information  -->
-</div> <!--end div tong  noi dung phan description va information  -->
-
-   <hr>
-
-   <div class="text-center"> <!--start similar  product-->
-
-      <h4 class="text-center my-5"><strong>Related products</strong></h4>
-     </div>
-    </section>
-    
-
-  
-    
-    
+      </table>
       
+    </div>
+
+  </section><!-- Comparing modal -->
+  <section id="comparing-modal">
+    <div class="container modal-content">
+      <span id="compare-modal-close">&times;</span>
+      <table class="table comparing-table">
+        <thead></thead>
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td id="compare-photo-1"></td>
+            <td id="compare-photo-2"></td>
+          </tr>
+          <tr>
+            <th scope="row">Product Name</th>
+            <td id="compare-name-1"></td>
+            <td id="compare-name-2"></td>
+          </tr>
+          <tr>
+            <th scope="row">Category</th>
+            <td id="compare-category-1"></td>
+            <td id="compare-category-2"></td>
+          </tr>
+          <tr>
+            <th scope="row">Brand</th>
+            <td id="compare-brand-1"></td>
+            <td id="compare-brand-2"></td>
+          </tr>
+          <tr>
+            <th scope="row">Price</th>
+            <td id="compare-price-1"></td>
+            <td id="compare-price-2"></td>
+          </tr>
+        </tbody>
+      </table>      
+    </div>
+  </section>  <!-- End comparing section -->
 
 
-  
+
+
    <!-- Footer from homepage -->
    <section id="footer">
     <div class="container-fluid footer-background">
@@ -363,10 +269,21 @@ input[type=number] {
         </div>
     </div>
 </section> <!-- End Footer -->
-            
 
 
-<script src="./cart/cart.js"></script>  <!-- For minus and add function -->
-<script src="./cart/productdetail.js"></script>
+
+   
+ <!-- AOS Animation JS -->
+ <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+
+ <!-- Toastr -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+ <!-- User-defined JS -->
+  <!-- <script src="./home/js/home.js"></script> -->
+  <script src="./products/products.js"></script>
+  <script src="./products/home.js"></script>
+  <script src="./cart/cart.js"></script>
 </body>
 </html>
