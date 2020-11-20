@@ -102,7 +102,7 @@ if (sessionStorage["cart-items"] != null) {
     '                    <div class="">\n' +
     '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepDown(); minus(\'' + 
     cartItems[i].ID + 
-    '\'); window.location.reload();">\n' +
+    '\')">\n' +
     '                            <span class="glyphicon glyphicon-minus"></span>\n' +
     '                        </button>\n' +
     '                        <input min="0" type="number" value="' +
@@ -110,14 +110,16 @@ if (sessionStorage["cart-items"] != null) {
     '">\n' +
     '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp(); add(\'' +
     cartItems[i].ID + 
-    '\'); window.location.reload();">\n' +
+    '\')">\n' +
     '                            <span class="glyphicon glyphicon-plus"></span>\n' +
     '                        </button>\n' +
     '                    </div>\n' +
     '                </div>\n' +
     '                <div class="d-flex justify-content-between align-items-center">\n' +
     '                    <div>\n' +
-    '                        <a href="#!" type="button" class=" small mr-3"><i class="fas fa-trash-alt mr-1"></i> Remove this Item </a>\n' +
+    '                        <a href="#!" type="button" class=" small mr-3" onclick="removeItem(\'' +
+    cartItems[i].ID + 
+    '\')"><i class="fas fa-trash-alt mr-1"></i> Remove this Item </a>\n' +
     '                    </div>\n' +
     '                    <p class="mb-0"><span><strong>\n' +
     (parseFloat(cartItems[i].Price) * cartItems[i].Quantity).toFixed(2)  +
@@ -255,6 +257,7 @@ for (var i = 0; i < cartItems.length; i++) {
 }
 sessionStorage["cart-items"] = JSON.stringify(cartItems);  
 cartItems = JSON.parse(sessionStorage["cart-items"].toString());
+displayCartItems();
 }
 
 function add(id) {
@@ -268,10 +271,22 @@ for (var i = 0; i < cartItems.length; i++) {
 }
 sessionStorage["cart-items"] = JSON.stringify(cartItems);  
 cartItems = JSON.parse(sessionStorage["cart-items"].toString());
-
+displayCartItems();
 }
 
 //End add to cart 
+
+//remove Item from cart
+function removeItem(id) {
+  for (var i = 0; i < cartItems.length; i++) {
+      if (cartItems[i].ID == id) {
+        cartItems.splice(i, 1); 
+      }
+  }
+  sessionStorage["cart-items"] = JSON.stringify(cartItems);  
+  cartItems = JSON.parse(sessionStorage["cart-items"].toString());
+  displayCartItems();
+  }
 
 
 
