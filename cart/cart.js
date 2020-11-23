@@ -81,7 +81,7 @@ if (sessionStorage["cart-items"] != null) {
     '         <div class="row mb-4">\n' +
     '           <div class="col-xs-12 col-sm-12 col-md-5 col-lg-3">\n' +
     '                <div class="thumbnail mb-3">\n' +
-    '                    <img src="./products/images/' +
+    '                    <img class="img-thumbnail" src="./products/images/' +
     cartItems[i].Image +
     '">\n' +
     '                </div>\n' + 
@@ -100,24 +100,23 @@ if (sessionStorage["cart-items"] != null) {
     ' USD</p>\n' +
     '                    </div>\n' +
     '                    <div class="">\n' +
-    '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepDown(); minus(\'' + 
+    '                        <button type="button" class="btn btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepDown(); minus(\'' + 
     cartItems[i].ID + 
-    '\')">\n' +
-    '                            <span class="glyphicon glyphicon-minus"></span>\n' +
+    '\')">-\n' +
+    
     '                        </button>\n' +
     '                        <input min="0" type="number" value="' +
     cartItems[i].Quantity.toString() +
     '">\n' +
-    '                        <button type="button" class="btn btn-default btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp(); add(\'' +
+    '                        <button type="button" class="btn  btn-sm" onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp(); add(\'' +
     cartItems[i].ID + 
-    '\')">\n' +
-    '                            <span class="glyphicon glyphicon-plus"></span>\n' +
+    '\')">+\n' +
     '                        </button>\n' +
     '                    </div>\n' +
     '                </div>\n' +
     '                <div class="d-flex justify-content-between align-items-center">\n' +
     '                    <div>\n' +
-    '                        <a href="#!" type="button" class=" small mr-3" onclick="removeItem(\'' +
+    '                        <a href="#!" type="button" style="color:#029899;" class=" small mr-3" onclick="removeItem(\'' +
     cartItems[i].ID + 
     '\')"><i class="fas fa-trash-alt mr-1"></i> Remove this Item </a>\n' +
     '                    </div>\n' +
@@ -134,7 +133,8 @@ if (sessionStorage["cart-items"] != null) {
     total += parseFloat(cartItems[i].Price) * cartItems[i].Quantity;
   }  
   document.getElementById("Cart").innerHTML = 
-    '<div class="container"><h3 class="mb-4">Your Cart</h3></div>\n' +
+    '<hr>' +
+    '<div class="container"><h3 class="mb-4" style="color:#ff6a5f;">Your Cart</h3></div>\n' +
     ' <div class="container ">\n' + firstBlock +
 
     '  <div class="col-xs-12 col-lg-4"> \n' +
@@ -156,7 +156,7 @@ if (sessionStorage["cart-items"] != null) {
     ' USD</strong></span> \n' +
     '                      </li> \n' +
     '                  </ul> \n' +
-    '                  <a href="#cart-form"><button type="button" class="btn btn-primary btn-block">PROCEED TO CHECKOUT</button></a> \n' +
+    '                  <a href="#cart-form"><button type="button" class="btn btn-info btn-block">PROCEED TO CHECKOUT</button></a> \n' +
     '              </div> \n' +
     '          </div> \n' +
     '      </div> \n' +
@@ -239,10 +239,15 @@ if (sessionStorage["cart-items"] != null) {
     '          </div> \n' +
     '        </div> \n' +
     '        <hr class="mb-4"> \n' +
-    '        <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="checkForm()">Place your order</button> \n' +
+    '        <button class="btn btn-info btn-lg btn-block" type="submit" onclick="checkForm()">Place your order</button> \n' +
     '      </form>  <!-- end card section --></br> \n';
 
+ } else if (sessionStorage["cart-items"] == []) {
+  document.getElementById("Cart").innerHTML = '<div class="container"><h3 class="mb-4">Your Cart have no items</h3></div>'
+
  }
+ 
+ 
 }
 
 function minus(id) {

@@ -21,7 +21,7 @@ listProducts.push(new Product("FA4", "Fashion", "fashion/boytshirt1.jpg", "Boy C
 listProducts.push(new Product("FA5", "Fashion", "fashion/boydenim1.jpg", "Boy Denim Jumpsuits", "15.25", "Baby Comfy"));
 
 listProducts.push(new Product("TO1", "Toys", "toys/lego1.jpg", "LEGO Construction Bulldozer","30.20", "Lego"));
-listProducts.push(new Product("TO2", "Toys", "toys/piano1.jpg", "Mini Keys Musical Keyboard", "45.00", "Kids"));
+listProducts.push(new Product("TO2", "Toys", "toys/piano1.jpg", "Mini Keys Musical KeyboardÂ ", "45.00", "Kids"));
 listProducts.push(new Product("TO3", "Toys", "toys/truck1.jpg", "Monster Truck Cars",  "15.50", "Lego"));
 listProducts.push(new Product("TO4", "Toys", "toys/barbie1.jpg", "Barbie Doll",  "17.99", "Baby Comfy"));
 listProducts.push(new Product("TO5", "Toys", "toys/unicorn1.jpg", "Unicorn Toy Soft Stuffed", "10.99", "Lego"));
@@ -53,13 +53,13 @@ function product(n) {
   for (let i in listProducts) {
     if (listProducts[i].Category == n) {
       document.getElementById("product-list").innerHTML +=
-      '<div class="col-xs-12 col-sm-6 col-md-4 d-flex item p-4" data-aos="flip-left">\n' +
-      '   <div class="thumbnail pb-3">\n' +
+      '<div class="col-xs-12 col-sm-6 col-md-4 d-flex item" data-aos="flip-left">\n' +
+      '   <div class="thumbnail">\n' +
       '       <a href="./productdetail.html" onclick="productDetail(' +
       "'" +
       listProducts[i].ID +
       "'" +  
-      ')"><img class="img-fluid" src="./products/images/' +
+      ')"><img src="./products/images/' +
       listProducts[i].Image +
       '" ></a>\n' +
       '       <div class="caption">\n' +
@@ -67,7 +67,7 @@ function product(n) {
       "'" +
       listProducts[i].ID +
       "'" +  
-      ')"><h3 class="" style="color:#ff6a5f;">' +
+      ')"><h3 class="text-danger">' +
       listProducts[i].Name +
       "</h3></a>\n" +
       '           <h4 class="text-success">' +
@@ -76,7 +76,7 @@ function product(n) {
       '           <p class="text-mute">Brand: ' +
       listProducts[i].Brand +
       "</p>" +
-      '           <button class="btn btn-info add-to-cart" onclick="addToCart(' +
+      '           <button class="btn btn-warning add-to-cart" onclick="addToCart(' +
       "'" +
       listProducts[i].ID +
       "'" +
@@ -93,13 +93,13 @@ function product(n) {
 
     if (listProducts[i].Brand == category) {
       document.getElementById("product-list").innerHTML +=
-      '<div class="col-xs-12 col-sm-6 col-md-4 d-flex item p-4" data-aos="flip-left">\n' +
-      '   <div class="thumbnail pb-3">\n' +
+      '<div class="col-xs-12 col-sm-6 col-md-4 d-flex item" data-aos="flip-left">\n' +
+      '   <div class="thumbnail">\n' +
       '       <a href="./productdetail.html" onclick="productDetail(' +
       "'" +
       listProducts[i].ID +
       "'" +  
-      ')"><img class="img-fluid" src="./products/images/' +
+      ')"><img src="./products/images/' +
       listProducts[i].Image +
       '" ></a>\n' +
       '       <div class="caption">\n' +
@@ -107,7 +107,7 @@ function product(n) {
       "'" +
       listProducts[i].ID +
       "'" +  
-      ')"><h3 class="" style="color:#ff6a5f;">' +
+      ')"><h3 class="text-danger">' +
       listProducts[i].Name +
       "</h3></a>\n" +
       '           <h4 class="text-success">' +
@@ -116,7 +116,7 @@ function product(n) {
       '           <p class="text-mute">Brand: ' +
       listProducts[i].Brand +
       "</p>" +
-      '           <button class="btn btn-info add-to-cart" onclick="addToCart(' +
+      '           <button class="btn btn-warning add-to-cart" onclick="addToCart(' +
       "'" +
       listProducts[i].ID +
       "'" +
@@ -136,13 +136,13 @@ function product(n) {
 function loadingProducts() {
   for (let i in listProducts) {
     document.getElementById("product-list").innerHTML +=
-      '<div class="col-xs-12 col-sm-6 col-md-4 d-flex item p-4" data-aos="flip-left">\n' +
-      '   <div class="thumbnail pb-3">\n' +
+      '<div class="col-xs-12 col-sm-6 col-md-4 d-flex item" data-aos="flip-left">\n' +
+      '   <div class="thumbnail">\n' +
       '       <a href="./productdetail.html" onclick="productDetail(' +
       "'" +
       listProducts[i].ID +
       "'" +  
-      ')"><img class="img-fluid" src="./products/images/' +
+      ')"><img src="./products/images/' +
       listProducts[i].Image +
       '" ></a>\n' +
       '       <div class="caption">\n' +
@@ -150,7 +150,7 @@ function loadingProducts() {
       "'" +
       listProducts[i].ID +
       "'" +  
-      ')"><h3 class="" style="color:#ff6a5f;">' +
+      ')"><h3 class="text-danger">' +
       listProducts[i].Name +
       "</h3></a>\n" +
       '           <h4 class="text-success">' +
@@ -159,7 +159,7 @@ function loadingProducts() {
       '           <p class="text-mute">Brand: ' +
       listProducts[i].Brand +
       "</p>" +
-      '           <button class="btn btn-info add-to-cart" onclick="addToCart(' +
+      '           <button class="btn btn-warning add-to-cart" onclick="addToCart(' +
       "'" +
       listProducts[i].ID +
       "'" +

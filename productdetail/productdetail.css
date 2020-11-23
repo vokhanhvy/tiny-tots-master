@@ -1,0 +1,46 @@
+.carousel {
+    height: 80%;
+  }
+          
+  #myCarousel .carousel-indicators {
+      margin: 10px 0 0;
+      
+      position: static;
+     
+      
+      width: 100%;
+  }
+  
+  #myCarousel .carousel-indicators li {
+     
+     
+      display: inline-block;
+      
+     
+      
+      width:100px;
+      height:100px;
+     
+  }
+  #myCarousel  .carousel-indicators li img {
+      display: block;
+  width:100px;
+      height:100px;
+      
+  }
+  
+  #myCarousel .carousel-outer {
+      position: relative;
+  }
+  
+  /* remove arrow sign in input type=number */
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
