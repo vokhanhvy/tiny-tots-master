@@ -47,7 +47,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 </head>
 
-<body> 
+<body onload="loadingProductsRelated()"> 
 
 
 
@@ -112,24 +112,18 @@
 </section> <!-- end navigation section -->
 
 
+<section id="productdetail"> 
+</section>
 
-
-
-
-
-  
-  <section id="productdetail"> 
-      
-  
-    </section>
-    
-  
-  
- 
-  
-  
-    
-
+  <!--  start product related cards section-->
+  <section> 
+    <div class="container" > 
+      <div class="row text-center">
+        <h3 style="color: #029899;"><strong>RELATED PRODUCTS</strong></h3>
+        <div class="content_product row d-flex flex-wrap text-center" id="product-related-list"></div>
+      </div>
+  </section> 
+ <!-- End Products related cards section -->
 
 
  <!-- Footer from homepage -->
@@ -170,8 +164,9 @@
           </div>
       </div>
   </div>
+  
 </section> <!-- End Footer -->
- 
+</body> 
 <!-- AOS Animation JS -->
 <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
 

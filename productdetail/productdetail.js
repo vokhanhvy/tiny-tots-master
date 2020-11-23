@@ -50,14 +50,15 @@ function productDetail(ID) {
 }
 
 /////////////////////////////////
-
+let a='';
 function displayProduct() {
   if (sessionStorage["display-product"] != null) {
     displayYourProduct = JSON.parse(sessionStorage["display-product"].toString()); 
-  let a = displayYourProduct[displayYourProduct.length-1].Category;
-  let  related='';
-  for (let i in listProducts) {
-    if (listProducts[i].Category == a) {
+  ////
+    a = displayYourProduct[displayYourProduct.length-1].Category;
+    let  related='';
+    for (let i in listProducts) {
+      if (listProducts[i].Category == a) {
      
        related +=
 
@@ -100,7 +101,9 @@ function displayProduct() {
 
     }
   }
-  //console.log(related);
+
+
+  ////
 
   let tempVar = displayYourProduct[displayYourProduct.length-1];
   let size ='';
@@ -255,19 +258,62 @@ function displayProduct() {
   ' </div>   \n' +
   ' </div>   \n' +
   ' <hr>   \n' +
-  '<br> \n' +
+  '<br>  \n' ;
   ////
-  '<div class="container" > \n' +
-  ' <h3 style="color: #029899; "><strong> RELATED PRODUCT</strong> </h3> \n' +
-  ' <div class="row text-center" > \n' +
-      //' <div class="content_product row d-flex flex-wrap text-center">\n' +
-  related +
-  ' </div>\n' +
-  ' </div>\n' +
-  '</div>\n';
+  // '<div class="container" > \n' +
+  // ' <div class="row" > \n' +
+  // ' <h3 style="color: #029899;"><strong>RELATED PRODUCTS</strong></h3> \n' +
+  // ' <div class="content_product row d-flex flex-wrap text-center">\n' + 
+  // related +
+  // ' </div>\n' +
+  // ' </div>\n' +
+  // '</div>\n';
+
   }
 };
 
+console.log(a);
+////
+function loadingProductsRelated() {
+  for (let i in listProducts) {
+    if (listProducts[i].Category == a) {
+      document.getElementById("product-related-list").innerHTML +=
+      '<div class="col-xs-12 col-sm-6 col-md-4 d-flex item p-4" data-aos="flip-left">\n' +
+      '   <div class="thumbnail pb-3">\n' +
+      '       <a href="./productdetail.html" onclick="productDetail(' +
+      "'" +
+      listProducts[i].ID +
+      "'" +  
+      ')"><img class="img-fluid" src="./products/images/' +
+      listProducts[i].Image +
+      '" ></a>\n' +
+      '       <div class="caption">\n' +
+      '           <a href="./productdetail.html" onclick="productDetail(' +
+      "'" +
+      listProducts[i].ID +
+      "'" +  
+      ')"><h3 class="" style="color:#ff6a5f;">' +
+      listProducts[i].Name +
+      "</h3></a>\n" +
+      '           <h4 class="text-success">' +
+      listProducts[i].Price.toString() +
+      " USD</h4>" +
+      '           <p class="text-mute">Brand: ' +
+      listProducts[i].Brand +
+      "</p>" +
+      '           <button class="btn btn-info add-to-cart" onclick="addToCart(' +
+      "'" +
+      listProducts[i].ID +
+      "'" +
+      ')"> <i class="fas fa-shopping-cart"></i> Add to Cart</button>\n' +
+      "       </div>\n" +
+      "   </div>\n" +
+      "</div>";
+    }
+  }
+}
+
+//////
 function changeQuantityMinus() {
   var a = displayYourProduct[displayYourProduct.length-1].Quantity;
   if(a==1) return; 
@@ -329,7 +375,7 @@ function addToCart2() {
    if (!exists) {
      cartItems2.push(addItem);
    }
-   
+
   //console.log(cartItems2);
    sessionStorage["cart-items"] = JSON.stringify(cartItems2); 
   
