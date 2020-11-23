@@ -259,7 +259,7 @@ function displayProduct() {
   '<div class="container" > \n' +
   ' <div class="row" > \n' +
       //' <div class="content_product row d-flex flex-wrap text-center">\n' +
-  ' <h3> RELATEDPRODUCT </h3> \n' +
+  ' <h3> RELATED PRODUCT </h3> \n' +
   related +
   ' </div>\n' +
   ' </div>\n' +
