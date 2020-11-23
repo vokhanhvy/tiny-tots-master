@@ -258,9 +258,9 @@ function displayProduct() {
   '<br> \n' +
   ////
   '<div class="container" > \n' +
+  ' <h3 style="color: #029899; "><strong> RELATED PRODUCT</strong> </h3> \n' +
   ' <div class="row text-center" > \n' +
       //' <div class="content_product row d-flex flex-wrap text-center">\n' +
-  ' <h3 style="color: #029899; "><strong> RELATED PRODUCT</strong> </h3> \n' +
   related +
   ' </div>\n' +
   ' </div>\n' +
